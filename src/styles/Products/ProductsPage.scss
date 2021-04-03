@@ -1,0 +1,84 @@
+@import "../variables.scss";
+.products-page {
+    width: 100%;
+    overflow-x: hidden;
+    margin-top: $nav-bar-height;
+
+    a.btn-back h2 {
+        text-align: center;
+        border-bottom: 1px solid $text-color-primary;
+        border-top: 1px solid $text-color-primary;
+        padding: 1rem;
+        width: 100%;
+    }
+}
+.category-list {
+    & > ul {
+        width: 100%;
+
+        & > li:first-child {
+            border-top: 1.5px solid $text-color-primary;
+        }
+        & > li {
+            border-bottom: 1.5px solid $text-color-primary;
+            padding: 1.5rem 3rem;
+
+            a {
+                display: flex;
+                justify-content: space-between;
+                span {
+                    font-size: 2rem;
+                }
+                h2 {
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        width: 0%;
+                        height: 2px;
+                        background-color: $text-color-hover;
+                        bottom: -1px;
+                        left: 0;
+                        transition: all 0.5s;
+                    }
+                }
+            }
+
+            & > ul.category-list__all-products {
+                padding-left: 1rem;
+                list-style: none;
+                padding-top: 1rem;
+                display: none;
+                li {
+                    transition: all 1s 1s;
+                    padding-bottom: 0.5rem;
+                    display: flex;
+
+                    a.name {
+                        flex: 3;
+                    }
+                    p.price {
+                        flex: 1.5;
+                        opacity: 0.5;
+                        font-style: italic;
+                    }
+                    p.ingredients {
+                        flex: 4;
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+        & > li:hover a {
+            color: $text-color-hover;
+        }
+        & > li:hover a > h2::after {
+            width: 100%;
+        }
+
+        & > li:hover ul.category-list__all-products {
+            display: block;
+        }
+    }
+}

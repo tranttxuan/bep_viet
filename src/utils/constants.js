@@ -1,0 +1,1 @@
+export const categoryList = ["Menus", "Entrees", "Plats", "Desserts", "Boissons",];

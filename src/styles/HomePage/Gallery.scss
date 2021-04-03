@@ -1,0 +1,120 @@
+@import "../variables.scss";
+@import "../mixin.scss";
+
+.alice-carousel {
+
+    @include respond(phone) {
+        .alice-carousel__prev-btn,
+        .alice-carousel__next-btn {
+            display: inline-block;
+
+            box-sizing: border-box;
+            width: 50%;
+            padding: 10px 5px;
+
+            [data-area] {
+                &::after {
+                    position: relative;
+
+                    content: attr(data-area);
+                    text-transform: capitalize;
+                }
+            }
+        }
+
+        .alice-carousel__prev-btn {
+            text-align: right;
+        }
+
+        .alice-carousel__prev-btn-item,
+        .alice-carousel__next-btn-item {
+            display: inline-block;
+            cursor: pointer;
+            padding: 5px;
+            margin: 0;
+            &.__inactive {
+                opacity: 0.4;
+                pointer-events: none;
+            }
+        }
+    }
+}
+
+.alice-carousel__stage {
+    position: relative;
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+
+    transform-style: flat;
+    -webkit-transform-style: flat;
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+    &-item {
+        position: relative;
+
+        display: inline-block;
+
+        box-sizing: border-box;
+        // width: 11.5rem;
+        // height: 11.5rem;
+
+        vertical-align: top;
+        white-space: normal;
+        outline: transparent;
+        line-height: 0;
+
+        &.__hidden {
+            opacity: 0;
+            overflow: hidden;
+        }
+
+        &__added {
+            & .overlay {
+                display: flex;
+                width: $size-image;
+                height: $size-image;
+
+                background: linear-gradient(
+                    182.07deg,
+                    rgba(0, 0, 0, 0) 77.6%,
+                    rgba(0, 0, 0, 0.75) 97.31%
+                );
+                position: absolute;
+                border-radius: 12px;
+            }
+            & img {
+                width: $size-image;
+                height: $size-image;
+
+                overflow: hidden;
+                border-radius: 12px;
+                image-rendering: crisp-edges;
+            }
+            & .information {
+                position: relative;
+                margin-top: 2rem;
+                margin-bottom: 1rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                & > div:first-child {
+                    flex: 2;
+                    display: flex;
+                    flex-direction: column;
+                    & > p:first-child {
+                        margin-bottom: 1.3rem;
+                    }
+                }
+            }
+        }
+    }
+
+    &-item:not(:last-child) {
+        margin-right: 4rem;
+    }
+}

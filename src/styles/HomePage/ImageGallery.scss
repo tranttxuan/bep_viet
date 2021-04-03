@@ -1,0 +1,75 @@
+@import "../variables.scss";
+
+.gallery-container {
+    overflow-x: hidden;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & .sliders {
+        display: flex;
+        flex: row;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: nowrap;
+        width: 100%;
+        height: 100%;
+        overflow-x: auto;
+
+        & > .slide {
+            // align-items: center;
+            // flex-direction: column;
+            // justify-content: center;
+            // align-items: center;
+
+            .slide-image {
+                // margin-right: 1rem;
+
+                .slide-overlay {
+                    display: flex;
+                    width: 250px;
+                    height: 180px;
+                    background: linear-gradient(
+                        182.07deg,
+                        rgba(0, 0, 0, 0) 77.6%,
+                        rgba(0, 0, 0, 0.75) 97.31%
+                    );
+                    position: absolute;
+                    border-radius: 25px;
+                }
+
+                img {
+                    width: 250px;
+                    height: 180px;
+                    border-radius: 2rem;
+                    // aspect-ratio: 16/9;
+                    image-rendering: crisp-edges;
+                }
+            }
+            .slide-image:first-child {
+                margin-left: 1rem;
+            }
+
+            & .slide-text {
+                display: flex;
+                justify-content: center;
+                margin-top: -2rem;
+                z-index: 3;
+
+                p {
+                    font-size: 1.2rem;
+                    line-height: 18px;
+                    display: flex;
+                    justify-content: center;
+                    color: $text-color-clair;
+                }
+            }
+        }
+    }
+
+    &:hover ::-webkit-scrollbar {
+        display: block;
+    }
+}

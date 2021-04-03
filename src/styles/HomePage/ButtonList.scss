@@ -1,0 +1,19 @@
+@import "../mixin.scss";
+.button-list {
+    display: flex;
+    justify-content: flex-start;
+    overflow-x: scroll;
+
+    @include respond(phone) {
+        justify-content: center;
+    }
+    button {
+        border: none;
+        outline: none;
+        padding: 1rem;
+        margin: 0rem 1rem 1rem 0rem;
+        background-color: transparent;
+        font-size: 1.3rem;
+        cursor: pointer;
+    }
+}
