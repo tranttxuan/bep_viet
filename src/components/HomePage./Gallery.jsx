@@ -13,7 +13,6 @@ const Gallery = ({ selectedCat }) => {
     useEffect(() => {
         axios.get(process.env.REACT_APP_BACKEND_URL + `/api/products`)
             .then(data => {
-                console.log("test", data.data)
                 setAllProducts(data.data)
             })
             .catch(err => setError(err.message))
@@ -36,12 +35,12 @@ const Gallery = ({ selectedCat }) => {
 
     const renderItems = (list) => {
         return (
-            list.map(({ id, image, category, name, price }, i) => {
+            list.map(({ _id, image, category, name, price }, i) => {
                 return (
                     <div className="alice-carousel__stage-item__added">
-                        <Link href={`/products?cat=${category}`}>
+                        <Link to={`/product/${_id}`}>
                             {selectedCat !== "Boissons" && <div className="overlay"></div>}
-                            <img key={i} src={`${image}`} alt={id}
+                            <img key={i} src={`${image}`} alt={_id}
                                 style={{
                                     objectFit: selectedCat === "Boissons" ? "scale-down" : "cover",
                                 }}></img>
@@ -51,7 +50,7 @@ const Gallery = ({ selectedCat }) => {
                                 <p>{name}</p>
                                 <p>{price}</p>
                             </div>
-                            <Link>See more</Link>
+                            <Link to={`/product/${_id}`}>See more</Link>
                         </div>
                     </div>
                 )

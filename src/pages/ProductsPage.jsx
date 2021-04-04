@@ -17,9 +17,7 @@ const ProductsPage = () => {
     useEffect(() => {
         //fetch food by category
         axios.get(process.env.REACT_APP_BACKEND_URL + `/api/products` + location.search)
-            .then(data => {
-                setProducts(data.data)
-            })
+            .then(data => { setProducts(data.data) })
             .catch(err => setError(err.message))
 
     }, [category, location.search]);
@@ -34,7 +32,7 @@ const ProductsPage = () => {
                     <meta name="description" content="Bep Viet, Colombes, cuisine vietnamienne" />
                 </Helmet>
                 <a href="/products" className="btn-back">
-                    <h2>&larr; Nos produits: {" "}{category}</h2>
+                    <h2>⏮️  Nos produits: {" "}{category}</h2>
                 </a>
                 <div>
                     {error && <div>{error}</div>}

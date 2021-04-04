@@ -1,0 +1,64 @@
+@import "./variables.scss";
+@import "./mixin.scss";
+
+.contact-page {
+    display: flex;
+    flex-direction: column;
+    margin-top: $nav-bar-height;
+
+    @include respond(tab-land) {
+        flex-direction: row;
+        max-width: 1400px;
+        margin: $nav-bar-height auto;
+    }
+
+    &__contact {
+        flex:1;
+        h2 {
+            margin-bottom: 1rem;
+            &.contact-nous {
+                margin-top: 2.5rem;
+            }
+        }
+
+        .horaires{
+            li{
+                padding-left: 2rem;
+            }
+        }
+        .contact-tel {
+            display: flex;
+            margin-bottom: 1rem;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            input,
+            textarea {
+                margin: 1rem;
+                padding: 5px;
+            }
+            button {
+                margin: 1rem;
+                margin-bottom: 3rem;
+                outline: none;
+                padding: 5px;
+                background-color: $background-button;
+            }
+        }
+    }
+
+    &__map {
+        flex: 2;
+        width: 100vw;
+        height: 100vw;
+        img {
+            width: 3rem;
+            height: 3rem;
+        }
+        @include respond(tab-land) {
+            height: 80vh;
+        }
+    
+    }
+}

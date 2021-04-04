@@ -23,7 +23,7 @@
             border-bottom: 1.5px solid $text-color-primary;
             padding: 1.5rem 3rem;
 
-            a {
+            .category {
                 display: flex;
                 justify-content: space-between;
                 span {
@@ -52,7 +52,7 @@
                 display: none;
                 li {
                     transition: all 1s 1s;
-                    padding-bottom: 0.5rem;
+                    padding-bottom: 1rem;
                     display: flex;
 
                     a.name {
@@ -73,7 +73,7 @@
         & > li:hover a {
             color: $text-color-hover;
         }
-        & > li:hover a > h2::after {
+        & > li:hover .category > h2::after {
             width: 100%;
         }
 

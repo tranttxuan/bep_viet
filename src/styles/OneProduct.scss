@@ -1,0 +1,98 @@
+@import "./variables.scss";
+@import "./mixin.scss";
+
+.product-page {
+    margin-top: calc(#{$nav-bar-height});
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include respond(phone) {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    @include respond(tab-land){
+        max-width: 1400px;
+        margin: calc(#{$nav-bar-height}) auto;
+    }
+
+    &__image {
+        width: 100vw;
+        height: 100vw;
+        margin-bottom: -$nav-bar-height;
+
+        @include respond(phone) {
+           flex: 2;
+            height: calc(100vh - #{$nav-bar-height});
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__details {
+        background-color: $background-secondary;
+        width: 100vw;
+        min-height: 50vh;
+        border-top-left-radius: 3rem;
+        border-top-right-radius: 3rem;
+        padding: 2rem;
+        @include respond(phone) {
+            flex: 1;
+             height: calc(100vh - #{$nav-bar-height});
+             border-top-left-radius: 0rem;
+             border-top-right-radius: 0rem;
+         }
+        & > div {
+            margin-bottom: 1rem;
+        }
+        &-name {
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        &-price {
+            opacity: 0.5;
+        }
+
+        &-ingredients,
+        &-description,
+        &-allergenic {
+            h3,
+            p {
+                margin-bottom: 0.2rem;
+            }
+            p {
+                margin-left: 1rem;
+                line-height: 1.2;
+            }
+        }
+        &-vegan {
+        }
+        &-allergenic {
+            display: flex;
+            flex-direction: column;
+
+            & .list-allergenic {
+                display: flex;
+
+                .allergenic {
+                    position: relative;
+                    .note {
+                        display: none;
+                        position: absolute;
+                        bottom: -1rem;
+                        left: 0;
+                    }
+                }
+
+                .allergenic:hover > .note {
+                    display: flex;
+                }
+            }
+        }
+    }
+}

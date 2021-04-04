@@ -12,7 +12,7 @@ const ButtonList = ({ sortByCat }) => {
                 🍽&nbsp;&nbsp;La&nbsp;carte
                     </button>
             <button onClick={sortByType} id="Menus">
-                🍽&nbsp;&nbsp;Menus
+                🍱&nbsp;&nbsp;Menus
                     </button>
             <button onClick={sortByType} id="Entrees" >
                 🥗&nbsp;&nbsp;Entrées

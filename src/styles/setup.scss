@@ -23,9 +23,17 @@ a {
 a:hover, a:focus {
     opacity: 0.8;
     color: $text-color-primary;
+    cursor: pointer;
 }
 
-
+button{
+    outline: none;
+    background-color: transparent;
+}
+button:hover{
+    outline: none;
+    background-color: transparent;
+}
 .App {
     background-color: $background-primary;
     width: 100%;

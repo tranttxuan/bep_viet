@@ -42,35 +42,27 @@
             .option-information {
                 width: 100%;
                 display: flex;
+                flex-direction: column;
                 justify-content: space-evenly;
                 display: none;
                 @include center-vertically;
 
                 & .link {
                     flex: 1;
-                    background-color: $background-button;
-                    border-radius: 30%;
-                    box-shadow: 0px 2px 7px rgba($text-color-primary, 0.8);
+                    height: 50%;
                     margin: 0.5rem;
-                    padding: 0.15rem;
+                    padding: 1rem;
                     display: flex;
                     justify-content: center;
-                    align-items: center;
-                    @include respond(tab-land) {
-                        margin: 1.5rem;
-                    }
+                    align-items: center;   
                     & img {
-                        width: 100%;
+                        width: 80%;
                     }
                 }
 
                 & .link.tel {
                     flex: none;
-                    padding: 0.5rem;
-
-                    @include respond(phone){
-                        padding: 2rem;
-                    }
+                    padding: 0rem!important;
                 }
             }
 
@@ -97,5 +89,6 @@
         }
         margin-left: 2rem;
         margin-right: 2rem;
+       
     }
 }
