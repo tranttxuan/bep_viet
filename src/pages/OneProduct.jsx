@@ -9,7 +9,7 @@ const OneProduct = (props) => {
     const idProd = props.match.params.idProducts;
     const [product, setProduct] = useState(null);
     const [error, setError] = useState('');
-console.log("product", product)
+   
     useEffect(() => {
         axios.get(process.env.REACT_APP_BACKEND_URL + `/api/products/` + idProd)
             .then(data => setProduct(data.data))
@@ -26,6 +26,9 @@ console.log("product", product)
                             <img src={product.image} />
                         </div>
                         <div className="product-page__details">
+                            <div className="product-page__details-goBack">
+                                <p onClick={() => props.history.goBack()}>⏮️ </p>
+                            </div>
                             <div className="product-page__details-name">
                                 <h2>{product.name}</h2>
                             </div>

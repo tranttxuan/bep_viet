@@ -35,28 +35,34 @@
             .option-overlay {
                 text-align: center;
                 text-justify: center;
-                p {
+                          p {
                     padding: 1rem;
                 }
             }
             .option-information {
                 width: 100%;
                 display: flex;
-                flex-direction: column;
+                // flex-direction: column;
                 justify-content: space-evenly;
-                display: none;
-                @include center-vertically;
+                // display: none;
+                // @include center-vertically;
 
                 & .link {
                     flex: 1;
-                    height: 50%;
+                    height: 100%;
                     margin: 0.5rem;
-                    padding: 1rem;
+                    padding: 0.1rem;
                     display: flex;
                     justify-content: center;
                     align-items: center;   
                     & img {
-                        width: 80%;
+                        width: 100%;
+                        @include respond(phone){
+                            width: 70%;
+                        }
+                    }
+                    @include respond(phone){
+                        padding: 1rem;
                     }
                 }
 
@@ -66,18 +72,18 @@
                 }
             }
 
-            &:hover .option-information,
-            &:focus .option-information {
-                display: flex;
-                transition: all 1s;
-            }
+            // &:hover .option-information,
+            // &:focus .option-information {
+            //     display: flex;
+            //     transition: all 1s;
+            // }
 
-            &:hover .option-overlay,
-            &:focus .option-overlay {
-                animation: fadeOut 1s;
-                opacity: 0;
-                transform: opacity 0.1s 1s;
-            }
+            // &:hover .option-overlay,
+            // &:focus .option-overlay {
+            //     animation: fadeOut 1s;
+            //     opacity: 0;
+            //     transform: opacity 0.1s 1s;
+            // }
         }
     }
 

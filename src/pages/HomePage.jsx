@@ -42,10 +42,10 @@ const HomePage = () => {
                     </div>
                     <div className="option-information">
                         <a href="https://www.just-eat.fr/livraison/repas/bezons-centre" className="link">
-                            <img src="https://logos-world.net/wp-content/uploads/2020/11/Uber-Eats-Logo.png" alt="ubereat"></img>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Uber_eats_logo_2017_06_22.jpg" alt="ubereat"></img>
                         </a>
                         <a href="https://www.just-eat.fr/livraison/repas/bezons-centre" className="link">
-                            <img src="https://cdn.worldvectorlogo.com/logos/deliveroo-logo.svg" alt="deliveroo"></img>
+                            <img src="https://i.pinimg.com/originals/1f/22/88/1f22889a6babb1166286b13db517a555.png" alt="deliveroo"></img>
                         </a>
                     </div>
                 </div>

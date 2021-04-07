@@ -40,6 +40,7 @@
         border-top-left-radius: 3rem;
         border-top-right-radius: 3rem;
         padding: 2rem;
+        position: relative;
         @include respond(phone) {
             flex: 1;
              height: calc(100vh - #{$nav-bar-height});
@@ -48,6 +49,20 @@
          }
         & > div {
             margin-bottom: 1rem;
+        }
+        &-goBack{
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            border: 1px solid $text-color-primary;
+            padding: 3px;
+
+            &:hover{
+                box-shadow: 0 2px 7px $text-color-primary;
+                transform: translateY(-5px);
+                transition: all 0.3s;
+                cursor: pointer;
+            }
         }
         &-name {
             text-transform: uppercase;
